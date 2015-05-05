@@ -39,6 +39,7 @@ public class FibonacciNumbers {
 	 * uses DP to solve problem of fibonacciNumber1
 	 * saves calculated values in an array, gives O(n) performance but uses O(n) space 
 	 */
+	//TODO
 	public static int fibonacciNumber2(int n) {
 		if (n == 0)
 			return 0;
@@ -48,9 +49,10 @@ public class FibonacciNumbers {
 		return (fibonacciNumber1(n - 1) + fibonacciNumber1(n - 2));
 	}
 	/**
-	 * improvement over fibonacciNumber3, saves only last 2 
+	 * improvement over fibonacciNumber2, saves only last 2 
 	 * calculated values, gives O(n) performance and uses O(1) space 
 	 */
+	//TODO
 	public static int fibonacciNumber3(int n) {
 		if (n == 0)
 			return 0;

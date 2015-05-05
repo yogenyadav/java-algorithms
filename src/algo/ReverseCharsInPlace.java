@@ -17,7 +17,7 @@ public class ReverseCharsInPlace {
 
 	public static void main(String[] args) {
 
-		String s = "ABCDEFGHIJ";
+		String s = "ABCDEFGHIJK";
 		System.out.println(ReverseCharsInPlace.reverseInPlace(s.toCharArray()));
 	}
 }

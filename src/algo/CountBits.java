@@ -1,3 +1,4 @@
+package algo;
 import java.util.BitSet;
 
 
@@ -5,7 +6,7 @@ public class CountBits {
 
 	public static void main(String[] args) {
 		long st = System.nanoTime();
-		System.out.println(countBits1(67598437) + "count, time: " + (System.nanoTime() - st));
+		System.out.format("count= %d, time = %d \n", countBits1(67598437), (System.nanoTime() - st));
 		st = System.nanoTime();
 		System.out.println(countBits4(67598437) + "count, time: " + (System.nanoTime() - st));
 		st = System.nanoTime();

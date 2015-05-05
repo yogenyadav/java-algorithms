@@ -6,6 +6,10 @@ import datastructs.list.CustomLinkedList.ListNode;
 
 public class FindKthFromLastFromList {
 
+	/*
+	 * second pointer that is m starts from head when first pointer that is i
+	 * reaches desired k. when i falls of m is at kth from last.  
+	 */
 	public static ListNode find(ListNode head, int k){
 		ListNode n = head;
 		ListNode m = null;
@@ -39,7 +43,7 @@ public class FindKthFromLastFromList {
 		list.insert("j");
 		list.insert("k");
 		list.print();
-		ListNode n = FindKthFromLastFromList.find(list.getListNode(), 8);
+		ListNode n = FindKthFromLastFromList.find(list.getListNode(), 3);
 		System.out.println("6th from last: " + n.data);
 	}
 }
