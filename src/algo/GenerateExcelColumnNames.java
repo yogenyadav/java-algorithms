@@ -1,3 +1,4 @@
+package algo;
 /*
  * This is a base 26 number generation algorithm
  */

@@ -1,3 +1,4 @@
+package algo;
 import graph.Graph;
 import graph.Graph.Node;
 

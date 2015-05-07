@@ -4,17 +4,17 @@ import java.util.Stack;
 import java.util.StringTokenizer;
 
 public class BinaryTreeOperations {
-	public static void preOrderPersist(Node root, StringBuffer buff) {
-		if (root == null) {
+	public static void preOrderPersist(Node node, StringBuffer buff) {
+		if (node == null) {
 			buff.append(",!");
 			return;
 		}
 		if (buff.length() == 0)
-			buff.append(root.getData());
+			buff.append(node.getData());
 		else
-			buff.append("," + root.getData());
-		preOrderPersist(root.getLeft(), buff);
-		preOrderPersist(root.getRight(), buff);
+			buff.append("," + node.getData());
+		preOrderPersist(node.getLeft(), buff);
+		preOrderPersist(node.getRight(), buff);
 	}
 
 	public static Node makeTree(String str) {
@@ -44,14 +44,17 @@ public class BinaryTreeOperations {
 	}
 
 	public static class Node{
-		int data;
-		Node left;
-		Node right;
+		public int data;
+		public Node left;
+		public Node right;
 		
 		public Node(int i, Node left, Node right) {
 			data = i;
 			this.left = left;
 			this.right = right;
+		}
+		public Node(int i) {
+			this(i, null, null);
 		}
 
 		public Node(Integer d) {

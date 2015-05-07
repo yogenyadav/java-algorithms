@@ -1,5 +1,6 @@
 package datastructs.graph;
 
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -27,11 +28,20 @@ public class Graph {
 		E++;
 	}
 	
-	public static class GraphNode {
-
+	public static class GraphNode implements Comparator<GraphNode> {
+		public int distance = 0;
+		public boolean explored = false;
+		public int x, y, z = 0;
+		
 		public List<GraphNode> getAdjacent() {
 			return null;
 		}
-		
+
+		@Override
+		public int compare(GraphNode o1, GraphNode o2) {
+			if (o1.distance < o2.distance) return -1;
+			else if (o1.distance > o2.distance) return 1;
+			else return 0;
+		}
 	}
 }
