@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.function.IntConsumer;
-import java.util.stream.Collectors;
+import static java.util.stream.Collectors.*;
 
 import junit.framework.TestCase;
 
@@ -27,7 +27,7 @@ public class TestStreamMethods extends TestCase {
 
 		List<Integer> l2 = l.stream()
 				.filter(x -> x.intValue() == 1 || x.intValue() == 6)
-				.collect(Collectors.toList());
+				.collect(toList());
 
 		Assert.assertEquals(2, l2.size());
 		Assert.assertEquals(true, l2.contains(1));
@@ -119,7 +119,7 @@ public class TestStreamMethods extends TestCase {
 
 		List<Person> listOfMales= l.stream()
 		.filter(p -> p.getGender().equals(Person.MALE)) //filter by MALE
-		.collect(Collectors.toList()); //then collect as list
+		.collect(toList()); //then collect as list
 		
 		Assert.assertEquals(5, listOfMales.size());
 	}
@@ -140,10 +140,8 @@ public class TestStreamMethods extends TestCase {
 		l.add(new Person("m5", Person.MALE, 22));
 
 		//collects Person objects by gender
-		Map<String, List<Person>> personsByGender = 
-				l.stream()
-				.collect(
-						Collectors.groupingBy(Person::getGender)); //groupingBy helper
+		Map<String, List<Person>> personsByGender = l.stream().collect(
+				groupingBy(Person::getGender)); // groupingBy helper
 		
 		Assert.assertEquals(5, personsByGender.get(Person.MALE).size());
 		Assert.assertEquals(4, personsByGender.get(Person.FEMALE).size());
@@ -166,13 +164,9 @@ public class TestStreamMethods extends TestCase {
 
 		//collects names by gender
 		Map<String, List<Object>> namesByGender = 
-				l.stream()
-				.collect(
-						Collectors.groupingBy(
-								Person::getGender,
-								Collectors.mapping(
-										Person::getName, 
-										Collectors.toList())));
+				l.stream().collect(
+				groupingBy(Person::getGender,
+						mapping(Person::getName, toList())));
 		
 		Assert.assertEquals(5, namesByGender.get(Person.MALE).size());
 		Assert.assertEquals(4, namesByGender.get(Person.FEMALE).size());
@@ -194,15 +188,10 @@ public class TestStreamMethods extends TestCase {
 		l.add(new Person("f4", Person.FEMALE, 10));
 		l.add(new Person("m5", Person.MALE, 22));
 
-		Map<String, Integer> sumByGender = 
-				l.stream()
+		Map<String, Integer> sumByGender = l.stream()
 				.collect(
-						Collectors.groupingBy(
-								Person::getGender,
-								Collectors.reducing(
-										0, 
-										Person::getAge,
-										Integer::sum)));
+				groupingBy(Person::getGender,
+						reducing(0, Person::getAge, Integer::sum)));
 		
 		Assert.assertEquals(76, sumByGender.get(Person.MALE).intValue());
 		Assert.assertEquals(51, sumByGender.get(Person.FEMALE).intValue());
@@ -227,9 +216,7 @@ public class TestStreamMethods extends TestCase {
 		Map<String, Double> averageAgeByGender = 
 				l.stream()
 				.collect(
-						Collectors.groupingBy(
-								Person::getGender,
-								Collectors.averagingDouble(Person::getAge)));
+				groupingBy(Person::getGender, averagingDouble(Person::getAge)));
 		
 		Assert.assertEquals(15.2, averageAgeByGender.get(Person.MALE).doubleValue(), 0.0);
 		Assert.assertEquals(12.75, averageAgeByGender.get(Person.FEMALE).doubleValue(), 0.0);

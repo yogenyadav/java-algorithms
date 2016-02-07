@@ -15,5 +15,4 @@ public class PathsWithSpecifiedSum {
 	public static void main(String[] args) {
 
 	}
-
 }
