@@ -13,7 +13,7 @@ public class GenericMethod {
 	}
 	
 	/**
-	 * This two the declaration of a generic method
+	 * These two the declaration of a generic method
 	 * Define a method as generic if you want to relate the 2 input parameters as done below
 	 * List<T> n and T m are related. 
 	 */
