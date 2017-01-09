@@ -1,6 +1,7 @@
 package algo;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -44,5 +45,9 @@ public class PushPopMax {
 			return Optional.empty();
 		}
 		return Optional.of(maxList.get(maxList.size() - 1));
+	}
+	
+	public List<Integer> getItems() {
+		return Collections.unmodifiableList(stackList);
 	}
 }
