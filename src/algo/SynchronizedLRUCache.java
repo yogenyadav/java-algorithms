@@ -36,12 +36,8 @@ public class SynchronizedLRUCache<K, V> implements Cache<K, V> {
 	    while (queue.size() >= maxSize) {
 	        K oldestKey = queue.poll();
 	        if (null != oldestKey) {
-<<<<<<< HEAD
 				V v = map.remove(oldestKey);
 				v = null;
-=======
-	            map.remove(oldestKey);
->>>>>>> 0e5925300d4ea7005748fedf39a702daf2f8a08f
 	        }
 	    }
 	    queue.add(key);

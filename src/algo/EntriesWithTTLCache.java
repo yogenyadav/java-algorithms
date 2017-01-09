@@ -35,10 +35,6 @@ public class EntriesWithTTLCache<K extends Comparable<K>, V extends Expirable> i
 	    		synchronized (this) {
 	    			map.remove(key);
 			    	queue.remove(key);
-<<<<<<< HEAD
-			    	value = null;
-=======
->>>>>>> 0e5925300d4ea7005748fedf39a702daf2f8a08f
 				}
 	    	}
 	    }
@@ -50,12 +46,8 @@ public class EntriesWithTTLCache<K extends Comparable<K>, V extends Expirable> i
 	    while (queue.size() >= maxSize) {
 			K oldestKey = queue.poll();
 			if (null != oldestKey) {
-<<<<<<< HEAD
 				V v = map.remove(oldestKey);
 				v = null;
-=======
-				map.remove(oldestKey);
->>>>>>> 0e5925300d4ea7005748fedf39a702daf2f8a08f
 			}
 	    }
 	    queue.add(key);
