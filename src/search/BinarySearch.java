@@ -1,6 +1,9 @@
 package search;
 
-import edu.princeton.cs.introcs.Stopwatch;
+
+import org.apache.commons.lang3.time.StopWatch;
+
+import java.util.concurrent.TimeUnit;
 
 public class BinarySearch {
 
@@ -26,8 +29,10 @@ public class BinarySearch {
 	
 	public static void main(String[] args) {
 		int[] sortedArrayOfInts = new int[]{4,6,8,11,13,14,23,29,33,43,45,56,63,78,79,89,90,93,96,98, 101, 104, 109, 110, 201, 202, 207};
-		Stopwatch s = new Stopwatch();
+		StopWatch s = new StopWatch();
+		s.start();
 		boolean f = BinarySearch.search(sortedArrayOfInts, 89);
-		System.out.println("time: + " + s.elapsedTime() + ", " + f);
+		s.stop();
+		System.out.println("time: + " + s.getTime(TimeUnit.MILLISECONDS) + ", " + f);
 	}
 }

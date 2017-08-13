@@ -37,6 +37,6 @@ public class GenericMethod {
 	 */
 	public static void a(List<? super Number> n, Integer m){
 		n.add(m);
-		n.add(n.get(0));
+//		n.add(n.get(0));
 	}
 }

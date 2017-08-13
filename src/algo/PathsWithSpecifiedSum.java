@@ -47,7 +47,8 @@ public class PathsWithSpecifiedSum {
 		Map<Node, String> nodeEvalStatus = new HashMap<>();
 		
 		pathsEvaluating.push(rootNode.getData());
-		while
-		
+//		while
+
+		return null;
 	}
 }

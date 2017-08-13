@@ -10,9 +10,10 @@ package sorting;
  */
 public class QuickSort {
 	public static int partition(){
-		for(int i = 0; i < arr.length(); i++){
-			
-		}
+//		for(int i = 0; i < arr.length(); i++){
+//
+//		}
+		return 0;
 	}
 	public static void quickSort(){
 		
