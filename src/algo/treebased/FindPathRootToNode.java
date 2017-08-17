@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-public class FindPath {
+public class FindPathRootToNode {
     /**
      * find path from root to a node.
      *

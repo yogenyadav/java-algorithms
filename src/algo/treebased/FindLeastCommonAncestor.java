@@ -29,8 +29,8 @@ public class FindLeastCommonAncestor {
      */
 
     public static BinaryTree.Node findLCA(BinaryTree.Node root, BinaryTree.Node node1, BinaryTree.Node node2) {
-        List<BinaryTree.Node> path1 = FindPath.findPath(root, node1);
-        List<BinaryTree.Node> path2 = FindPath.findPath(root, node2);
+        List<BinaryTree.Node> path1 = FindPathRootToNode.findPath(root, node1);
+        List<BinaryTree.Node> path2 = FindPathRootToNode.findPath(root, node2);
         int minSize = Math.min(path1.size(), path2.size());
         for (int i = 0; i < minSize; i++) {
             if (path1.get(i).data != path2.get(i).data) {

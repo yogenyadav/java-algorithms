@@ -13,33 +13,13 @@ public class FindDuplicates {
         int len1 = arr1.length;
         int len2 = arr2.length;
 
-        if (len1 == 0 || len2 == 0) {
-            return new int[0];
-        }
-        if ((arr1.length == 1) && ((arr1[0] == arr2[0]) || (arr1[0] == arr2[len2 - 1]))) {
-            return arr1;
-        }
-        if ((arr2.length == 1) && ((arr2[0] == arr1[0]) || (arr2[0] == arr1[len1 - 1]))) {
-            return arr2;
-        }
-        if (arr1[len1 - 1] < arr2[0] || arr2[len2 - 1] < arr1[0]) {
-            return new int[0];
-        }
-
         int idx1 = 0;
         int idx2 = 0;
 
         int[] dups = new int[len1 + len2];
         int dupsidx = 0;
 
-        while (true) {
-
-            if (idx1 >= len1) {
-                return dups;
-            }
-            if (idx2 >= len2) {
-                return dups;
-            }
+        while (idx1 < len1 && idx2 < len2) {
 
             int a = arr1[idx1];
 
@@ -56,6 +36,7 @@ public class FindDuplicates {
                 idx2++;
             }
         }
+        return dups;
     }
 
     public static void main(String[] args) {
