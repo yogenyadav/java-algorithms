@@ -1,6 +1,7 @@
 package algo.graphbased;
 
 import com.google.common.collect.Sets;
+import org.apache.commons.lang3.tuple.Pair;
 
 import java.util.*;
 
@@ -41,11 +42,11 @@ public class TopologicalSortDFS {
 
     private static void topologicalSort(Graph<Integer> g, int node, Set<Integer> visitedNodes, Stack<Integer> stack) {
         visitedNodes.add(node);
-        Set<Integer> childNodes = g.getAdjacents(node);
-        for (int childNode : childNodes) {
-            if (!visitedNodes.contains(childNode)) {
-                visitedNodes.add(childNode);
-                topologicalSort(g, childNode, visitedNodes, stack);
+        Set<Pair<Integer, Integer>> childNodes = g.getAdjacents(node);
+        for (Pair<Integer, Integer> childNode : childNodes) {
+            if (!visitedNodes.contains(childNode.getLeft())) {
+                visitedNodes.add(childNode.getLeft());
+                topologicalSort(g, childNode.getLeft(), visitedNodes, stack);
             }
         }
         stack.push(node);

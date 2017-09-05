@@ -2,17 +2,23 @@ package algo.graphbased;
 
 import com.google.common.collect.Sets;
 import lombok.Data;
+import org.apache.commons.lang3.tuple.Pair;
 
 import java.util.*;
 
 public class Graph<T> {
-    Map<T, List<T>> nodesAndEdges = new HashMap<>();
+    /**
+     * Node to Edges
+     * Edge is defined as Pair (tuple)
+     * Pair - left is the connected node and right is the weight of the edge
+     */
+    Map<T, List<Pair<T, Integer>>> nodesAndEdges = new HashMap<>();
 
     Set<T> getNodes() {
-        return nodesAndEdges.keySet();
+        return Sets.newHashSet(nodesAndEdges.keySet());
     }
 
-    Set<T> getAdjacents(T node) {
+    Set<Pair<T, Integer>> getAdjacents(T node) {
         return Sets.newHashSet(nodesAndEdges.get(node));
     }
 

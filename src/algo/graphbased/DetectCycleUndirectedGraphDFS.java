@@ -1,5 +1,7 @@
 package algo.graphbased;
 
+import org.apache.commons.lang3.tuple.Pair;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -38,12 +40,12 @@ public class DetectCycleUndirectedGraphDFS {
 
     private static boolean isGraphCyclic(Graph<Integer> g, int node, int parentNode, Set<Integer> visited) {
         visited.add(node);
-        Set<Integer> adjacents = g.getAdjacents(node);
-        for (int adjNode : adjacents) {
-            if (!visited.contains(adjNode)) {
-                visited.add(adjNode);
-                isGraphCyclic(g, adjNode, node, visited);
-            } else if (adjNode != parentNode) {
+        Set<Pair<Integer, Integer>> adjacents = g.getAdjacents(node);
+        for (Pair<Integer, Integer> adjNode : adjacents) {
+            if (!visited.contains(adjNode.getLeft())) {
+                visited.add(adjNode.getLeft());
+                isGraphCyclic(g, adjNode.getLeft(), node, visited);
+            } else if (adjNode.getLeft() != parentNode) {
                 return true;
             }
         }
