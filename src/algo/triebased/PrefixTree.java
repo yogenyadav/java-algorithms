@@ -1,4 +1,4 @@
-package algo.treebased.tries;
+package algo.triebased;
 
 /**
  * https://medium.com/algorithms/trie-prefix-tree-algorithm-ee7ab3fe3413
