@@ -1,6 +1,11 @@
 package algo.nocategory;
 
+import com.google.common.base.Stopwatch;
+
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 public class YearWithMostPeople {
 
@@ -14,7 +19,7 @@ public class YearWithMostPeople {
      *
      * @param birthDeathPair - n x 2 array; a row contains birth year in [r][0] and death year in [r][1]
      */
-    public static int[] yearWithMostpeople(int[][] birthDeathPair) {
+    public static int[] yearWithMostpeople1(int[][] birthDeathPair) {
 
         int minBirthYear = minBirthYear(birthDeathPair);
         int maxDeathYear = maxDeathYear(birthDeathPair);
@@ -38,6 +43,57 @@ public class YearWithMostPeople {
             if (v > max[1]) {
                 max[0] = minBirthYear + i;
                 max[1] = v;
+            }
+        }
+        return max;
+    }
+
+    /**
+     * more optimized
+     * time complexity (p - number of people)
+     * mark +1/-1 - O(p)
+     * count population - O(y) - y is the range from min birth to max death
+     * overall - O(p) + O(y) - saves the cycles to calculate min and max though.
+     * This algorithm is slower than earlier because of all the boxing/unboxing.
+     *
+     */
+    public static int[] yearWithMostpeople2(int[][] birthDeathPair) {
+
+        int minBirthYear = Integer.MAX_VALUE;
+        int maxDeathYear = Integer.MIN_VALUE;
+
+        Map<Integer, Integer> popByYear = new HashMap<>();
+        for (int r = 0; r < birthDeathPair.length; r++) {
+            int birthYear = birthDeathPair[r][0];
+            if (birthYear < minBirthYear) {
+                minBirthYear = birthYear;
+            }
+            int deathYear = birthDeathPair[r][1];
+            if (deathYear > maxDeathYear) {
+                maxDeathYear = deathYear;
+            }
+
+            popByYear.merge(birthYear, 1, (a, b) -> a + b);
+
+            Integer value = popByYear.get(deathYear + 1);
+            if (value == null) {
+                popByYear.put((deathYear + 1), -1);
+            } else {
+                popByYear.put((deathYear + 1), value-1);
+            }
+        }
+
+        int[] max = {0, 0};
+        int pop = 0;
+        for (int i = minBirthYear; i <= maxDeathYear + 1; i++) {
+            Integer v = popByYear.get(i);
+            if (v != null) {
+                popByYear.put(i, v + pop);
+                pop = v + pop;
+                if (max[1] < pop) {
+                    max[0] = i;
+                    max[1] = pop;
+                }
             }
         }
         return max;
@@ -84,7 +140,15 @@ public class YearWithMostPeople {
                 {35, 80},
                 {15, 55}
         };
-        int[] yearPop = yearWithMostpeople(birthDeathPair);
+        Stopwatch sw = Stopwatch.createStarted();
+        int[] yearPop = yearWithMostpeople1(birthDeathPair);
+        System.out.println(sw.elapsed(TimeUnit.NANOSECONDS));
+        System.out.println(yearPop[0] + ": " + yearPop[1]);
+
+        sw.stop();
+        sw.start();
+        yearPop = yearWithMostpeople2(birthDeathPair);
+        System.out.println(sw.elapsed(TimeUnit.NANOSECONDS));
         System.out.println(yearPop[0] + ": " + yearPop[1]);
     }
 }
