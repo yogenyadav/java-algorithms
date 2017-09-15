@@ -20,24 +20,21 @@ I have tried to add unit tests but as always tests lag behind.
 - misc in "nocategory"
 
 
-| Algorithm      | Status  |
-| ---------------|---------|
-| Binary search  | exists  |
 
 
 ### Eventually, I have intentions to add solutions to the following problem set :) 
 #### Arrays
-- Binary Search
-- Find Maximum in Sliding Window
-- Search rotated array
-- Find smallest common number
-- Rotate Array
-- Find low/high index
-- Move zeros to left
-- Find maximum single sell profit
-- Implement Quicksort
-- Merge Overlapping Intervals
-- Sum of Two Values
+| Binary search  | exists  |
+| Find Maximum in Sliding Window  |   |
+| Search rotated array  | exists  |
+| Find smallest common number  |   |
+| Rotate Array  | exists  |
+| Find low/high index  |   |
+| Move zeros to left  | exists  |
+| Find maximum single sell profit  |   |
+| Implement Quicksort  |   |
+| Merge Overlapping Intervals  | exists  |
+| Sum of Two Values  | exists  |
 
 #### Linked List
 - Reverse a singly linked list
