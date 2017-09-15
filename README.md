@@ -19,6 +19,12 @@ I have tried to add unit tests but as always tests lag behind.
 - trie
 - misc in "nocategory"
 
+
+| Algorithm      | Status  |
+| ---------------|---------|
+| Binary search  | exists  |
+
+
 ### Eventually, I have intentions to add solutions to the following problem set :) 
 #### Arrays
 - Binary Search
