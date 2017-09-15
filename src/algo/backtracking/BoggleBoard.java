@@ -32,7 +32,7 @@ public class BoggleBoard {
      * when exploring a char all its adjacents should be explored except its parent i.e. the char where we came from
      * Ex. exploring b to c: c to f and c to e should be explored; c to b should not be explored
      * bc, bcf, bce, bcfi... are valid for exploration not bcb
-     *  
+     *
      */
     private void findWords(char[][] boggle, int row, int col, String str, int parent, List<String> words) {
         for (int r = row - 1; r <= row + 1 && r < boggle.length; r++) {
@@ -65,5 +65,15 @@ public class BoggleBoard {
         BoggleBoard bb = new BoggleBoard();
         bb.buildPrefixTree(ImmutableList.of("ade", "bcf", "dhie", "bcfed", "gd", "badg", "cfi", "ehi", "bcfi", "ehif"));
         System.out.println(bb.findWords(boggle));
+
+        char[][] boggle2 = {
+                {'c', 'a', 't'},
+                {'r', 'r', 'e'},
+                {'t', 'o', 'n'},
+        };
+
+        bb = new BoggleBoard();
+        bb.buildPrefixTree(ImmutableList.of("cat", "cater", "art", "toon", "moon", "not", "eat", "ton"));
+        System.out.println(bb.findWords(boggle2));
     }
 }
