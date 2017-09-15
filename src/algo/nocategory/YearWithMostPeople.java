@@ -54,7 +54,9 @@ public class YearWithMostPeople {
      * mark +1/-1 - O(p)
      * count population - O(y) - y is the range from min birth to max death
      * overall - O(p) + O(y) - saves the cycles to calculate min and max though.
-     * This algorithm is slower than earlier because of all the boxing/unboxing.
+     * This algorithm is slower than earlier because of
+     * - all the boxing/unboxing.
+     * - map hash calculation.
      *
      */
     public static int[] yearWithMostpeople2(int[][] birthDeathPair) {

@@ -56,5 +56,11 @@
           <version>1.16.18</version>
           <scope>provided</scope>
       </dependency>
+      <!-- https://mvnrepository.com/artifact/com.carrotsearch/hppc -->
+      <dependency>
+          <groupId>com.carrotsearch</groupId>
+          <artifactId>hppc</artifactId>
+          <version>0.7.2</version>
+      </dependency>
   </dependencies>
 </project>
