@@ -1,7 +1,7 @@
 ### Algorithms
 Contains a collection of algorithms that I have practiced while preparing for interviews or I was asked in the interviews.
-You will find a few which are left with the instructions but not coded yet, I plan to code them some time. These are in following 
-broad categories.
+You will find a few left with instructions but not yet coded, I plan to code them some time. These are in following broad categories.
+I have tried to add unit tests but as always tests lag behind.
 
 #### Categories
 - array
