@@ -39,20 +39,22 @@ I have tried to add unit tests but as always tests lag behind.
 | Sum of Two Values               | yes   |
 
 #### Linked List
-- Reverse a singly linked list
-- Remove Duplicates from a Linked List
-- Delete node with a given key
-- Insertion Sort of a Linked List
-- Intersection Point of Two Lists
-- Nth from last node
-- Swap Nth Node with Head
-- Merge Two Sorted Linked Lists
-- Merge Sort
-- Reverse even nodes
-- Rotate a Linked List
-- Reverse k Elements
-- Add Two Integers
-- Copy linked list with arbitrary pointer
+| Problem                                | solution exists |
+|----------------------------------------|-----|
+| Reverse a singly linked list           | yes |
+| Remove Duplicates from a Linked List   | yes |
+| Delete node with a given key           | yes |
+| Insertion Sort of a Linked List        | no  |
+| Intersection Point of Two Lists        | no  |
+| Nth from last node                     | yes |
+| Swap Nth Node with Head                | no  |
+| Merge Two Sorted Linked Lists          | no  |
+| Merge Sort                             | no  |
+| Reverse even nodes                     | no  |
+| Rotate a Linked List                   | yes |
+| Reverse k Elements                     | yes |
+| Add Two Integers                       | no  |
+| Copy linked list with arbitrary pointer| no  |
 
 #### Math and Stats
 - Find kth permutation
