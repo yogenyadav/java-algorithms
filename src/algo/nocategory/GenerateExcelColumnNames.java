@@ -1,4 +1,4 @@
-package algo;
+package algo.nocategory;
 /*
  * This is a base 26 number generation algorithm
  */

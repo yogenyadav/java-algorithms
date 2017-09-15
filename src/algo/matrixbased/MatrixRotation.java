@@ -1,4 +1,4 @@
-package algo;
+package algo.matrixbased;
 import java.util.Arrays;
 
 public class MatrixRotation {

@@ -1,4 +1,4 @@
-package algo;
+package algo.nocategory;
 
 import java.util.ArrayList;
 import java.util.Collections;

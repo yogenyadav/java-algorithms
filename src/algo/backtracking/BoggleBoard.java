@@ -1,4 +1,4 @@
-package algo.triebased;
+package algo.backtracking;
 
 public class BoggleBoard {
 }

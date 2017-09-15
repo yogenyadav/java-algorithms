@@ -1,4 +1,4 @@
-package algo;
+package algo.nocategory;
 
 public class FibonacciNumbers {
 
