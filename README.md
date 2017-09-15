@@ -24,17 +24,17 @@ I have tried to add unit tests but as always tests lag behind.
 
 ### Eventually, I have intentions to add solutions to the following problem set :) 
 #### Arrays
-| Binary search  | yes  |
+| Binary search                   | yes |
 | Find Maximum in Sliding Window  | no  |
-| Search rotated array  | yes  |
-| Find smallest common number  | no  |
-| Rotate Array  | yes  |
-| Find low/high index  | no  |
-| Move zeros to left  | yes  |
-| Find maximum single sell profit  | no  |
-| Implement Quicksort  | no  |
-| Merge Overlapping Intervals  | yes |
-| Sum of Two Values  | yes |
+| Search rotated array            | yes |
+| Find smallest common number     | no  |
+| Rotate Array                    | yes |
+| Find low/high index             | no  |
+| Move zeros to left              | yes |
+| Find maximum single sell profit | no  |
+| Implement Quicksort             | no  |
+| Merge Overlapping Intervals     | yes |
+| Sum of Two Values               | yes |
 
 #### Linked List
 - Reverse a singly linked list
