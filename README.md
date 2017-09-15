@@ -25,7 +25,6 @@ I have tried to add unit tests but as always tests lag behind.
 ### Eventually, I have intentions to add solutions to the following problem set :) 
 #### Arrays
 | Algo                            | state |
-|---------------------------------|-------|
 | Binary search                   | yes   |
 | Find Maximum in Sliding Window  | no    |
 | Search rotated array            | yes   |
