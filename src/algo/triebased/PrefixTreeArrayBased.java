@@ -39,9 +39,34 @@ public class PrefixTreeArrayBased {
         return isWord(word, 1, root[word.charAt(0) - BASE]);
     }
 
+    public boolean isPrefix(String prefix) {
+        if (root[prefix.charAt(0) - BASE] == null) {
+            return false;
+        }
+
+        return isPrefix(prefix, 1, root[prefix.charAt(0) - BASE]);
+    }
+
+    private boolean isPrefix(String prefix, int idx, Node n) {
+        if (idx == prefix.length()) {
+            return true;
+        }
+
+        if (n.nodes[prefix.charAt(idx) - BASE] != null
+                && n.nodes[prefix.charAt(idx) - BASE].c == prefix.charAt(idx)) {
+            return isPrefix(prefix, idx + 1, n.nodes[prefix.charAt(idx) - BASE]);
+        }
+
+        return false;
+    }
+
     private boolean isWord(String word, int idx, Node n) {
         if (idx == word.length() && n.isWord) {
             return true;
+        }
+
+        if (idx == word.length()) {
+            return false;
         }
 
         if (n.nodes[word.charAt(idx) - BASE] != null
@@ -101,6 +126,13 @@ public class PrefixTreeArrayBased {
         System.out.println(pt.isWord("boom"));
         System.out.println(pt.isWord("booms"));
         System.out.println(pt.isWord("zebra"));
+
+        System.out.println(pt.isPrefix("b"));
+        System.out.println(pt.isPrefix("bo"));
+        System.out.println(pt.isPrefix("boo"));
+        System.out.println(pt.isPrefix("boom"));
+        System.out.println(pt.isPrefix("booms"));
+
         System.out.println(sw.elapsed(TimeUnit.NANOSECONDS));
     }
 }
