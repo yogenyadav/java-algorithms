@@ -24,7 +24,7 @@ I have tried to add unit tests but as always tests lag behind.
 
 ### Eventually, I have intentions to add solutions to the following problem set :) 
 #### Arrays
-| Problem                         |     |
+| Problem                         | solution exists |
 |---------------------------------|-------|
 | Binary search                   | yes   |
 | Find Maximum in Sliding Window  | no    |
