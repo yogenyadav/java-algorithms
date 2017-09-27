@@ -19,9 +19,6 @@ I have tried to add unit tests but as always tests lag behind.
 - trie
 - misc in "nocategory"
 
-
-
-
 ### Eventually, I have intentions to add solutions to the following problem set :) 
 #### Arrays
 | Problem                         | solution exists |
@@ -193,3 +190,7 @@ A set consists of an un-ordered list of non-repeating elements.
 In an associative array, there are two types of data which are stored in pairs: the key and its associated value. 
 The data structure is relational in nature: the value is addressed by its key. Associative arrays are good for building dictionaries.
 
+### Assorted notes on algorithms
+#### Bisection method
+Example: find root of polynomial f(x) = x^3 - x - 3
+1. find 2 numbers a and b such that f(a) and f(b) have opposite signs, i.e. they 
