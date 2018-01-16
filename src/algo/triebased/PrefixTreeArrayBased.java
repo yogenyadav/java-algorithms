@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
  * https://medium.com/algorithms/trie-prefix-tree-algorithm-ee7ab3fe3413
  * Prefix Tree or Trie
  *
- * Array based impl is 23 times faster to build tree and 14 times faster to find word
+ * Array based impl is 23 times faster to build trie and 14 times faster to find word
  * compared to map based impl.
  *
  * Trie time complexity - O(W*L)
